@@ -1,6 +1,6 @@
 public class PassiveSkills extends Skill {
 
-    public PassiveSkills(int cost, String description) {
-        super(cost, description);
+    public PassiveSkills(String name, int cost, String description) {
+        super(cost, description, name);
     }
 }

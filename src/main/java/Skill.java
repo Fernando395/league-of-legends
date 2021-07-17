@@ -1,8 +1,10 @@
 public class Skill {
     private int cost;
     private String description;
+    private String name;
 
-    public Skill(int cost, String description) {
+    public Skill(int cost, String description, String name) {
+        this.name = name;
         this.cost = cost;
         this.description = description;
     }
@@ -13,5 +15,9 @@ public class Skill {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getName() {
+        return name;
     }
 }
