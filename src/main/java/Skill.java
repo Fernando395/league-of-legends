@@ -1,11 +1,17 @@
 public class Skill {
     private int cost;
-    private int damage;
     private String description;
 
-    public Skill(int cost, int damage, String description) {
+    public Skill(int cost, String description) {
         this.cost = cost;
-        this.damage = damage;
         this.description = description;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
