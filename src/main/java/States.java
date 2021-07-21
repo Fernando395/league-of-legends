@@ -1,6 +1,7 @@
 public class States {
     private int health;
-    private SecondaryBar secondaryBar;
+    private String resourceType;
+    private int resourceAmount;
     private int armor;
     private int attackDamage;
     private int magicResist;
@@ -8,9 +9,10 @@ public class States {
     private int attackRange;
     private double attackSpeed;
 
-    States(int health, SecondaryBar secondaryBar, int armor, int attackDamage, int magicResist, int moveSpeed, int attackRange, double attackSpeed) {
+    States(int health, String resourceType, int resourceAmount, int armor, int attackDamage, int magicResist, int moveSpeed, int attackRange, double attackSpeed) {
         this.health = health;
-        this.secondaryBar = secondaryBar;
+        this.resourceType = resourceType;
+        this.resourceAmount = resourceAmount;
         this.armor = armor;
         this.attackDamage = attackDamage;
         this.magicResist = magicResist;
@@ -47,7 +49,11 @@ public class States {
         return moveSpeed;
     }
 
-    public SecondaryBar getSecondaryBar() {
-        return secondaryBar;
+    public int getResourceAmount() {
+        return resourceAmount;
+    }
+
+    public String getResourceType() {
+        return resourceType;
     }
 }

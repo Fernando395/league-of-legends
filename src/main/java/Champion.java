@@ -6,13 +6,19 @@ public class Champion {
     private States states;
     private ArrayList<Skill> skills;
     private Features features;
+    private Skin skin;
+    private String releaseDateOf;
+    private int storePrice;
 
-    public Champion(String name, String position, ArrayList<Skill> skills, States states, Features features) {
+    public Champion(String name, String position, ArrayList<Skill> skills, States states, Features features, Skin skin, String releaseDateOf, int storePrice) {
         this.name = name;
         this.position = position;
         this.skills = skills;
         this.states = states;
         this.features = features;
+        this.skin = skin;
+        this.releaseDateOf = releaseDateOf;
+        this.storePrice = storePrice;
     }
 
     public String getName() {
@@ -33,5 +39,17 @@ public class Champion {
 
     public String getPosition() {
         return position;
+    }
+
+    public String getReleaseDateOf() {
+        return releaseDateOf;
+    }
+
+    public int getStorePrice() {
+        return storePrice;
+    }
+
+    public Skin getSkin() {
+        return skin;
     }
 }

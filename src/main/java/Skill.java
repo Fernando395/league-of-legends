@@ -1,7 +1,7 @@
 public class Skill {
-    private int cost;
-    private String description;
-    private String name;
+    protected int cost;
+    protected String description;
+    protected String name;
 
     public Skill(int cost, String description, String name) {
         this.name = name;

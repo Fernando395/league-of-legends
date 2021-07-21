@@ -1,7 +1,7 @@
-public class HealingSkills extends Skill {
+public class HealingSkill extends Skill {
     private double healing;
 
-    public HealingSkills(int cost, String description, double healing) {
+    public HealingSkill(int cost, String description, double healing, String name) {
         super(cost, description, name);
         this.healing = healing;
     }
