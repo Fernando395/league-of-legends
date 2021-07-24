@@ -1,3 +1,5 @@
+package model;
+
 public class HealingSkill extends Skill {
     private double healing;
 

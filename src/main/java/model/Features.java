@@ -1,3 +1,5 @@
+package model;
+
 public class Features {
     private String function;
     private String difficulty;

@@ -1,3 +1,5 @@
+package model;
+
 public class Skill {
     protected int cost;
     protected String description;

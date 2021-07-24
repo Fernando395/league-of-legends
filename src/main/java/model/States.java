@@ -1,3 +1,5 @@
+package model;
+
 public class States {
     private int health;
     private String resourceType;

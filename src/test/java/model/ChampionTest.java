@@ -1,9 +1,11 @@
+package model;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ChampionTest {
 
@@ -58,7 +60,7 @@ public class ChampionTest {
 
     @Test
     public void shouldGetSkin() {
-        Skin skin = createAChampionTest().getSkin();
+        Skin skin = createAChampionTest().getSkinDefault();
         assertEquals("default", skin.getName());
         assertEquals("18/01/2011", skin.getReleaseDateOf());
         assertTrue(skin.getObtainable());

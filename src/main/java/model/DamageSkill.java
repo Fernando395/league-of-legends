@@ -1,3 +1,5 @@
+package model;
+
 public class DamageSkill extends Skill {
     private double damage;
 

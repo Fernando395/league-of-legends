@@ -1,3 +1,5 @@
+package model;
+
 public class Skin {
     private String name;
     private String releaseDateOf;
