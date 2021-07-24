@@ -1,4 +1,4 @@
-package model;
+package org.example.league_of_legends.model;
 
 import java.util.ArrayList;
 

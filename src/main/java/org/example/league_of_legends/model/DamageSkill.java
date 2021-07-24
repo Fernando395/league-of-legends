@@ -1,4 +1,4 @@
-package model;
+package org.example.league_of_legends.model;
 
 public class DamageSkill extends Skill {
     private double damage;
