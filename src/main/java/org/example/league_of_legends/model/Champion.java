@@ -1,8 +1,12 @@
 package org.example.league_of_legends.model;
 
+import org.example.league_of_legends.dto.CreateChampionDto;
+
 import java.util.ArrayList;
 
 public class Champion {
+    private static int counter = 1;
+    private final int id;
     private String name;
     private String position;
     private States states;
@@ -12,6 +16,7 @@ public class Champion {
     private ArrayList<Skin> skins;
     private String releaseDateOf;
     private int storePrice;
+    // outro valor
 
     public Champion(String name, String position, ArrayList<Skill> skills, States states, Features features, Skin skinDefault, String releaseDateOf, int storePrice) {
         this.name = name;
@@ -22,6 +27,13 @@ public class Champion {
         this.skinDefault = skinDefault;
         this.releaseDateOf = releaseDateOf;
         this.storePrice = storePrice;
+        this.id = counter;
+        counter++;
+        this.skins = new ArrayList<>();
+    }
+
+    public Champion(CreateChampionDto dto) {
+        this(dto.getName(), dto.getPosition(), dto.getSkills(), dto.getStates(), dto.getFeatures(), dto.getSkinDefault(), dto.getReleaseDateOf(), dto.getStorePrice());
     }
 
     public String getName() {
@@ -56,7 +68,15 @@ public class Champion {
         return skinDefault;
     }
 
-    public void addSkin(Skin skin){
+    public int getId() {
+        return id;
+    }
+
+    public ArrayList<Skin> getSkins() {
+        return skins;
+    }
+
+    public void addSkin(Skin skin) {
         this.skins.add(skin);
     }
 
