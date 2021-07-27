@@ -49,15 +49,14 @@ public class ChampionController {
     }
 
     @PutMapping("/champion/{id}")
-    public Champion replaceChampion(@RequestBody Champion newChampion, @PathVariable int id) {
-        repository.deleteById(id);
-        return repository.save(newChampion);
+    public void replaceChampion(@RequestBody Champion newChampion) {
+         repository.update(newChampion);
     }
 
     @PutMapping("/champion/{id}/skin")
     public Champion replaceSkin(@RequestBody Skin skin, @PathVariable int id) {
         Champion champion = repository.findById(id);
-        champion.updateSkin(skin, id);
+        champion.updateSkin(skin);
         return champion;
     }
 }

@@ -89,11 +89,12 @@ public class Champion {
         this.skins.remove(skin);
     }
 
-    public void updateSkin(Skin skin, int id) {
-        for (int i = 0; i < skins.size(); i++) {
-            if (id == skins.get(i).getId()) {
-                skins.remove(skin.getId());
-                skins.add(skin);
+    public void updateSkin(Skin newSkin) {
+        for (Skin skin : skins) {
+            if (skin.getId() == newSkin.getId()) {
+                skins.remove(skin);
+                skins.add(newSkin);
+                break;
             }
         }
     }

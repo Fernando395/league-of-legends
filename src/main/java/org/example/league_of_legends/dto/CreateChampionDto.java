@@ -18,22 +18,6 @@ public class CreateChampionDto {
     private int influencePointPrice;
     private int riotPointPrice;
 
-    public int getInfluencePointPrice() {
-        return influencePointPrice;
-    }
-
-    public void setInfluencePointPrice(int influencePointPrice) {
-        this.influencePointPrice = influencePointPrice;
-    }
-
-    public int getRiotPointPrice() {
-        return riotPointPrice;
-    }
-
-    public void setRiotPointPrice(int riotPointPrice) {
-        this.riotPointPrice = riotPointPrice;
-    }
-
     public String getName() {
         return name;
     }
@@ -88,5 +72,21 @@ public class CreateChampionDto {
 
     public void setReleaseDateOf(String releaseDateOf) {
         this.releaseDateOf = releaseDateOf;
+    }
+
+    public int getInfluencePointPrice() {
+        return influencePointPrice;
+    }
+
+    public void setInfluencePointPrice(int influencePointPrice) {
+        this.influencePointPrice = influencePointPrice;
+    }
+
+    public int getRiotPointPrice() {
+        return riotPointPrice;
+    }
+
+    public void setRiotPointPrice(int riotPointPrice) {
+        this.riotPointPrice = riotPointPrice;
     }
 }

@@ -24,7 +24,7 @@ public class SkinTest {
     }
 
     @Test
-    public void shouldGetStorePrice() {
+    public void shouldGetRiotPointPrice() {
         assertEquals(0, skin.getRiotPointPrice());
     }
 }

@@ -11,7 +11,7 @@ public class States {
     private int attackRange;
     private double attackSpeed;
 
-    States(int health, String resourceType, int resourceAmount, int armor, int attackDamage, int magicResist, int moveSpeed, int attackRange, double attackSpeed) {
+    public States(int health, String resourceType, int resourceAmount, int armor, int attackDamage, int magicResist, int moveSpeed, int attackRange, double attackSpeed) {
         this.health = health;
         this.resourceType = resourceType;
         this.resourceAmount = resourceAmount;
