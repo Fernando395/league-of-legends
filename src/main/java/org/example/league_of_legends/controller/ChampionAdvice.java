@@ -12,7 +12,7 @@ public class ChampionAdvice {
     @ResponseBody
     @ExceptionHandler(ChampionNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String handleChampionNotFound(ChampionNotFoundException e){
+    public String handleChampionNotFound(ChampionNotFoundException e) {
         return e.getMessage();
     }
 }

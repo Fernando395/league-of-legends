@@ -35,4 +35,13 @@ public class ChampionRepository {
             }
         }
     }
+
+    public void deleteById(int id) {
+        for (Champion champion : champions) {
+            if (champion.getId() == id) {
+                champions.remove(champion);
+                break;
+            }
+        }
+    }
 }

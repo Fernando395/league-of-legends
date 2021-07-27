@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SkinTest {
-    Skin skin = new Skin("default", "18/01/2011", 0, true);
+    Skin skin = new Skin( "default", "18/01/2011", 0, true);
 
     @Test
     public void shouldGetName() {
@@ -25,6 +25,6 @@ public class SkinTest {
 
     @Test
     public void shouldGetStorePrice() {
-        assertEquals(0, skin.getStorePrice());
+        assertEquals(0, skin.getRiotPointPrice());
     }
 }

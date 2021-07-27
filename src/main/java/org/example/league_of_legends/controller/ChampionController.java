@@ -23,21 +23,15 @@ public class ChampionController {
         return repository.findAll();
     }
 
-    @PostMapping("/champion")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Champion createChampion(@RequestBody CreateChampionDto championDto) {
-        Champion champion = new Champion(championDto);
-        Champion createdChampion = repository.save(champion);
-        return createdChampion;
-    }
-
     @GetMapping("/champion/{id}")
     public Champion findChampionById(@PathVariable int id) {
         return repository.findById(id);
     }
 
-    // DELETE /champion/{id}
-    // PATCH /champion/{id}
+    @DeleteMapping("/champion/{id}")
+    public void deleteChampion(@PathVariable int id) {
+        repository.deleteById(id);
+    }
 
     @PostMapping("/champion/{id}/skin")
     @ResponseStatus(HttpStatus.CREATED)
@@ -47,5 +41,23 @@ public class ChampionController {
         return champion;
     }
 
-    // PATCH /champion/{id}/skin
+    @PostMapping("/champion")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Champion createChampion(@RequestBody CreateChampionDto championDto) {
+        Champion champion = new Champion(championDto);
+        return repository.save(champion);
+    }
+
+    @PutMapping("/champion/{id}")
+    public Champion replaceChampion(@RequestBody Champion newChampion, @PathVariable int id) {
+        repository.deleteById(id);
+        return repository.save(newChampion);
+    }
+
+    @PutMapping("/champion/{id}/skin")
+    public Champion replaceSkin(@RequestBody Skin skin, @PathVariable int id) {
+        Champion champion = repository.findById(id);
+        champion.updateSkin(skin, id);
+        return champion;
+    }
 }

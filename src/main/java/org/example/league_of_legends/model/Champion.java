@@ -15,10 +15,10 @@ public class Champion {
     private Skin skinDefault;
     private ArrayList<Skin> skins;
     private String releaseDateOf;
-    private int storePrice;
-    // outro valor
+    private int influencePointPrice;
+    private int riotPointPrice;
 
-    public Champion(String name, String position, ArrayList<Skill> skills, States states, Features features, Skin skinDefault, String releaseDateOf, int storePrice) {
+    public Champion(String name, String position, ArrayList<Skill> skills, States states, Features features, Skin skinDefault, String releaseDateOf, int influencePointPrice, int riotPointPrice) {
         this.name = name;
         this.position = position;
         this.skills = skills;
@@ -26,14 +26,15 @@ public class Champion {
         this.features = features;
         this.skinDefault = skinDefault;
         this.releaseDateOf = releaseDateOf;
-        this.storePrice = storePrice;
+        this.influencePointPrice = influencePointPrice;
+        this.riotPointPrice = riotPointPrice;
         this.id = counter;
         counter++;
         this.skins = new ArrayList<>();
     }
 
     public Champion(CreateChampionDto dto) {
-        this(dto.getName(), dto.getPosition(), dto.getSkills(), dto.getStates(), dto.getFeatures(), dto.getSkinDefault(), dto.getReleaseDateOf(), dto.getStorePrice());
+        this(dto.getName(), dto.getPosition(), dto.getSkills(), dto.getStates(), dto.getFeatures(), dto.getSkinDefault(), dto.getReleaseDateOf(), dto.getInfluencePointPrice(), dto.getRiotPointPrice());
     }
 
     public String getName() {
@@ -60,8 +61,8 @@ public class Champion {
         return releaseDateOf;
     }
 
-    public int getStorePrice() {
-        return storePrice;
+    public int getInfluencePointPrice() {
+        return influencePointPrice;
     }
 
     public Skin getSkinDefault() {
@@ -76,9 +77,24 @@ public class Champion {
         return skins;
     }
 
+    public int getRiotPointPrice() {
+        return riotPointPrice;
+    }
+
     public void addSkin(Skin skin) {
         this.skins.add(skin);
     }
 
-    //TODO: removeSkin, updateSkin, criar testes
+    public void removeSkin(Skin skin) {
+        this.skins.remove(skin);
+    }
+
+    public void updateSkin(Skin skin, int id) {
+        for (int i = 0; i < skins.size(); i++) {
+            if (id == skins.get(i).getId()) {
+                skins.remove(skin.getId());
+                skins.add(skin);
+            }
+        }
+    }
 }

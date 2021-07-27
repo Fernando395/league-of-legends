@@ -15,8 +15,8 @@ public class ChampionTest {
         Skill skill1 = new PassiveSkill("exemplo de nome", 0, "exemplo de descrição");
         skill.add(skill1);
         Features features = new Features("lutador", "fácil", "exemplo", "corpo a corpo");
-        Skin skin = new Skin("default", "18/01/2011", 0, true);
-        return new Champion("Renekton", "top/mid", skill, states, features, skin, "18/01/2011", 4800);
+        Skin skin = new Skin( "default", "18/01/2011", 0, true);
+        return new Champion("Renekton", "top/mid", skill, states, features, skin, "18/01/2011", 4800, 450);
     }
 
     @Test
@@ -64,12 +64,12 @@ public class ChampionTest {
         assertEquals("default", skin.getName());
         assertEquals("18/01/2011", skin.getReleaseDateOf());
         assertTrue(skin.getObtainable());
-        assertEquals(0, skin.getStorePrice());
+        assertEquals(0, skin.getRiotPointPrice());
     }
 
     @Test
     public void shouldGetStorePrice() {
-        assertEquals(4800, createAChampionTest().getStorePrice());
+        assertEquals(4800, createAChampionTest().getInfluencePointPrice());
     }
 
     @Test
