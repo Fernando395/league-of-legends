@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ChampionTest {
 
@@ -15,7 +14,7 @@ public class ChampionTest {
         Skill skill1 = new PassiveSkill("exemplo de nome", 0, "exemplo de descrição");
         skill.add(skill1);
         Features features = new Features("lutador", "fácil", "exemplo", "corpo a corpo");
-        Skin skin = new Skin( "default", "18/01/2011", 0, true);
+        Skin skin = new Skin("default", "18/01/2011", 0, true);
         return new Champion("Renekton", "top/mid", skill, states, features, skin, "18/01/2011", 4800, 450);
     }
 
@@ -62,18 +61,50 @@ public class ChampionTest {
     public void shouldGetSkin() {
         Skin skin = createAChampionTest().getSkinDefault();
         assertEquals("default", skin.getName());
-        assertEquals("18/01/2011", skin.getReleaseDateOf());
+        assertEquals("18/01/2011", skin.getReleaseDate());
         assertTrue(skin.getObtainable());
         assertEquals(0, skin.getRiotPointPrice());
     }
 
     @Test
-    public void shouldGetStorePrice() {
+    public void shouldRemoveSkin() {
+        Champion champion = createAChampionTest();
+        Skin skin = new Skin("default", "18/01/2011", 0, true);
+        champion.addSkin(skin);
+        assertEquals(1, champion.getSkins().size());
+        champion.removeSkin(skin);
+        assertEquals(0, champion.getSkins().size());
+    }
+
+    @Test
+    public void shouldUpdateSkin() {
+        Champion champion = createAChampionTest();
+        Skin fioraSkin = new Skin("Fiora", "18/01/2011", 0, true);
+        champion.addSkin((Skin) fioraSkin.clone());
+        fioraSkin.setRiotPointPrice(450);
+        champion.updateSkin(fioraSkin);
+        assertEquals(450,champion.getSkins().get(0).getRiotPointPrice());
+    }
+
+    @Test
+    public void shouldGetSkins() {
+        Champion champion = createAChampionTest();
+        champion.addSkin(new Skin("default", "18/01/2011", 0, true));
+        assertEquals(1, champion.getSkins().size());
+    }
+
+    @Test
+    public void shouldGetRiotPointPrice() {
+        assertEquals(450, createAChampionTest().getRiotPointPrice());
+    }
+
+    @Test
+    public void shouldGetInfluencePointPrice() {
         assertEquals(4800, createAChampionTest().getInfluencePointPrice());
     }
 
     @Test
     public void shouldReleaseDateOf() {
-        assertEquals("18/01/2011", createAChampionTest().getReleaseDateOf());
+        assertEquals("18/01/2011", createAChampionTest().getReleaseDate());
     }
 }

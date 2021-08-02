@@ -25,7 +25,7 @@ public class CreateChampionDtoTest {
         championDto.setFeatures(features);
         championDto.setInfluencePointPrice(4000);
         championDto.setRiotPointPrice(450);
-        championDto.setReleaseDateOf("18/01/2011");
+        championDto.setReleaseDate("18/01/2011");
         championDto.setName("Renekton");
         championDto.setPosition("top/mid");
         return championDto;
@@ -74,7 +74,7 @@ public class CreateChampionDtoTest {
     public void shouldGetSkin() {
         Skin skin = createAChampionTdoTest().getSkinDefault();
         assertEquals("default", skin.getName());
-        assertEquals("18/01/2011", skin.getReleaseDateOf());
+        assertEquals("18/01/2011", skin.getReleaseDate());
         assertTrue(skin.getObtainable());
         assertEquals(0, skin.getRiotPointPrice());
     }
@@ -91,6 +91,6 @@ public class CreateChampionDtoTest {
 
     @Test
     public void shouldReleaseDateOf() {
-        assertEquals("18/01/2011", createAChampionTdoTest().getReleaseDateOf());
+        assertEquals("18/01/2011", createAChampionTdoTest().getReleaseDate());
     }
 }

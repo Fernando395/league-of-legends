@@ -14,18 +14,18 @@ public class Champion {
     private Features features;
     private Skin skinDefault;
     private ArrayList<Skin> skins;
-    private String releaseDateOf;
+    private String releaseDate;
     private int influencePointPrice;
     private int riotPointPrice;
 
-    public Champion(String name, String position, ArrayList<Skill> skills, States states, Features features, Skin skinDefault, String releaseDateOf, int influencePointPrice, int riotPointPrice) {
+    public Champion(String name, String position, ArrayList<Skill> skills, States states, Features features, Skin skinDefault, String releaseDate, int influencePointPrice, int riotPointPrice) {
         this.name = name;
         this.position = position;
         this.skills = skills;
         this.states = states;
         this.features = features;
         this.skinDefault = skinDefault;
-        this.releaseDateOf = releaseDateOf;
+        this.releaseDate = releaseDate;
         this.influencePointPrice = influencePointPrice;
         this.riotPointPrice = riotPointPrice;
         this.id = counter;
@@ -34,7 +34,7 @@ public class Champion {
     }
 
     public Champion(CreateChampionDto dto) {
-        this(dto.getName(), dto.getPosition(), dto.getSkills(), dto.getStates(), dto.getFeatures(), dto.getSkinDefault(), dto.getReleaseDateOf(), dto.getInfluencePointPrice(), dto.getRiotPointPrice());
+        this(dto.getName(), dto.getPosition(), dto.getSkills(), dto.getStates(), dto.getFeatures(), dto.getSkinDefault(), dto.getReleaseDate(), dto.getInfluencePointPrice(), dto.getRiotPointPrice());
     }
 
     public String getName() {
@@ -57,8 +57,8 @@ public class Champion {
         return position;
     }
 
-    public String getReleaseDateOf() {
-        return releaseDateOf;
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
     public int getInfluencePointPrice() {
@@ -98,4 +98,48 @@ public class Champion {
             }
         }
     }
+
+    public Champion updateFromDto(CreateChampionDto dto) {
+        this.name = dto.getName();
+        this.position = dto.getPosition();
+        this.skinDefault = dto.getSkinDefault();
+        this.riotPointPrice = dto.getRiotPointPrice();
+        this.states = dto.getStates();
+        this.influencePointPrice = dto.getInfluencePointPrice();
+        this.skills = dto.getSkills();
+        this.features = dto.getFeatures();
+        this.releaseDate = dto.getReleaseDate();
+        return this;
+    }
+
+    // public Champion partialUpdateFromDto(CreateChampionDto dto) {
+    //   if (dto.getName().isPresent()) {
+    //      this.name = dto.getName().get();
+    // }
+    // if (dto.getPosition().isPresent()) {
+    //     this.position = dto.getPosition().get();
+    // }
+    // if (dto.getFeatures().isPresent()) {
+    //    this.features = dto.getFeatures().get();
+    // }
+    // if (dto.getSkills().isPresent()) {
+    //     this.skills = dto.getSkills().get();
+    //}
+    //if (dto.getStates().isPresent()) {
+    //    this.states = dto.getStates().get();
+    //}
+    //if (dto.getInfluencePointPrice().isPresent()) {
+    //   this.influencePointPrice = dto.getInfluencePointPrice().get();
+    // }
+    // if (dto.getReleaseDateOf().isPresent()) {
+    //    this.releaseDate = dto.getReleaseDateOf().get();
+    // }
+    // if (dto.getRiotPointPrice().isPresent()) {
+    //     this.riotPointPrice = dto.getRiotPointPrice().get();
+    // }
+    // if (dto.getSkinDefault().isPresent()) {
+    //     this.skinDefault = dto.getSkinDefault().get();
+    // }
+    //return this;
+    // }
 }

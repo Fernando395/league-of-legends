@@ -14,7 +14,7 @@ public class CreateChampionDto {
     private ArrayList<Skill> skills;
     private Features features;
     private Skin skinDefault;
-    private String releaseDateOf;
+    private String releaseDate;
     private int influencePointPrice;
     private int riotPointPrice;
 
@@ -66,12 +66,12 @@ public class CreateChampionDto {
         this.skinDefault = skinDefault;
     }
 
-    public String getReleaseDateOf() {
-        return releaseDateOf;
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setReleaseDateOf(String releaseDateOf) {
-        this.releaseDateOf = releaseDateOf;
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public int getInfluencePointPrice() {

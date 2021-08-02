@@ -15,7 +15,7 @@ public class SkinTest {
 
     @Test
     public void shouldGetReleaseDateOf() {
-        assertEquals("18/01/2011", skin.getReleaseDateOf());
+        assertEquals("18/01/2011", skin.getReleaseDate());
     }
 
     @Test
