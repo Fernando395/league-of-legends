@@ -1,6 +1,7 @@
 package org.example.league_of_legends.model;
 
 import org.example.league_of_legends.dto.CreateChampionDto;
+import org.example.league_of_legends.dto.PartialUpdateChampionDto;
 
 import java.util.ArrayList;
 
@@ -118,34 +119,34 @@ public class Champion {
         return this;
     }
 
-    // public Champion partialUpdateFromDto(CreateChampionDto dto) {
-    //   if (dto.getName().isPresent()) {
-    //      this.name = dto.getName().get();
-    // }
-    // if (dto.getPosition().isPresent()) {
-    //     this.position = dto.getPosition().get();
-    // }
-    // if (dto.getFeatures().isPresent()) {
-    //    this.features = dto.getFeatures().get();
-    // }
-    // if (dto.getSkills().isPresent()) {
-    //     this.skills = dto.getSkills().get();
-    //}
-    //if (dto.getStates().isPresent()) {
-    //    this.states = dto.getStates().get();
-    //}
-    //if (dto.getInfluencePointPrice().isPresent()) {
-    //   this.influencePointPrice = dto.getInfluencePointPrice().get();
-    // }
-    // if (dto.getReleaseDateOf().isPresent()) {
-    //    this.releaseDate = dto.getReleaseDateOf().get();
-    // }
-    // if (dto.getRiotPointPrice().isPresent()) {
-    //     this.riotPointPrice = dto.getRiotPointPrice().get();
-    // }
-    // if (dto.getSkinDefault().isPresent()) {
-    //     this.skinDefault = dto.getSkinDefault().get();
-    // }
-    //return this;
-    // }
+    public Champion partialUpdateFromDto(PartialUpdateChampionDto dto) {
+        if (dto.getName().isPresent()) {
+            this.name = dto.getName().get();
+        }
+        if (dto.getPosition().isPresent()) {
+            this.position = dto.getPosition().get();
+        }
+        if (dto.getFeatures().isPresent()) {
+            this.features = dto.getFeatures().get();
+        }
+        if (dto.getSkills().isPresent()) {
+            this.skills = dto.getSkills().get();
+        }
+        if (dto.getStates().isPresent()) {
+            this.states = dto.getStates().get();
+        }
+        if (dto.getInfluencePointPrice().isPresent()) {
+            this.influencePointPrice = dto.getInfluencePointPrice().get();
+        }
+        if (dto.getReleaseDate().isPresent()) {
+            this.releaseDate = dto.getReleaseDate().get();
+        }
+        if (dto.getRiotPointPrice().isPresent()) {
+            this.riotPointPrice = dto.getRiotPointPrice().get();
+        }
+        if (dto.getSkinDefault().isPresent()) {
+            this.skinDefault = dto.getSkinDefault().get();
+        }
+        return this;
+    }
 }
