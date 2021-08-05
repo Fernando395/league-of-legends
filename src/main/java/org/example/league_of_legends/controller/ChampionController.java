@@ -1,9 +1,11 @@
 package org.example.league_of_legends.controller;
 
 import org.example.league_of_legends.dto.CreateChampionDto;
+import org.example.league_of_legends.dto.CreateSkinDto;
 import org.example.league_of_legends.model.Champion;
 import org.example.league_of_legends.model.Skin;
 import org.example.league_of_legends.repository.ChampionRepository;
+import org.example.league_of_legends.repository.SkinRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +14,8 @@ import java.util.ArrayList;
 @RestController
 public class ChampionController {
 
-    private ChampionRepository repository;
+    private final ChampionRepository repository;
+    SkinRepository skinRepository = new SkinRepository();
 
     ChampionController() {
         this.repository = new ChampionRepository();
@@ -61,9 +64,9 @@ public class ChampionController {
         return champion.updateFromDto(updateChampionDto);
     }
 
-    //@PutMapping("/champion/{id}/skin")
-    //public Skin UpdateSkin(@RequestBody CreateSkinDto updateSkinDto, @PathVariable int id) {
-    //    Skin skin = Repository.findById(id);
-    //    return skin.updateFromDto(updateSkinDto);
-    //}
+    @PutMapping("/champion/{id}/skin")
+    public Skin UpdateSkin(@RequestBody CreateSkinDto updateSkinDto, @PathVariable int id) {
+        Skin skin = skinRepository.findById(id);
+        return skin.updateFromDto(updateSkinDto);
+    }
 }
