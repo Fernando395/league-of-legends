@@ -1,6 +1,5 @@
 package org.example.league_of_legends.model;
 
-import org.example.league_of_legends.dto.CreateChampionDto;
 import org.example.league_of_legends.dto.CreateSkinDto;
 
 public class Skin implements Cloneable {
@@ -23,7 +22,7 @@ public class Skin implements Cloneable {
     @Override
     public Object clone() {
         try {
-            return (Skin) super.clone();
+            return super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
             return new Skin(this.name,this.releaseDate,this.riotPointPrice,this.obtainable);
