@@ -8,6 +8,7 @@ import org.example.league_of_legends.model.States;
 import java.util.ArrayList;
 
 public class CreateChampionDto {
+    public String image;
     private String name;
     private String position;
     private States states;
@@ -88,5 +89,13 @@ public class CreateChampionDto {
 
     public void setRiotPointPrice(int riotPointPrice) {
         this.riotPointPrice = riotPointPrice;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

@@ -5,6 +5,7 @@ import org.example.league_of_legends.dto.CreateChampionDto;
 import java.util.ArrayList;
 
 public class Champion {
+    private String image;
     private static int counter = 1;
     private final int id;
     private String name;
@@ -18,7 +19,8 @@ public class Champion {
     private int influencePointPrice;
     private int riotPointPrice;
 
-    public Champion(String name, String position, ArrayList<Skill> skills, States states, Features features, Skin skinDefault, String releaseDate, int influencePointPrice, int riotPointPrice) {
+    public Champion(String image, String name, String position, ArrayList<Skill> skills, States states, Features features, Skin skinDefault, String releaseDate, int influencePointPrice, int riotPointPrice) {
+        this.image = image;
         this.name = name;
         this.position = position;
         this.skills = skills;
@@ -34,7 +36,7 @@ public class Champion {
     }
 
     public Champion(CreateChampionDto dto) {
-        this(dto.getName(), dto.getPosition(), dto.getSkills(), dto.getStates(), dto.getFeatures(), dto.getSkinDefault(), dto.getReleaseDate(), dto.getInfluencePointPrice(), dto.getRiotPointPrice());
+        this(dto.getImage(), dto.getName(), dto.getPosition(), dto.getSkills(), dto.getStates(), dto.getFeatures(), dto.getSkinDefault(), dto.getReleaseDate(), dto.getInfluencePointPrice(), dto.getRiotPointPrice());
     }
 
     public String getName() {
@@ -79,6 +81,10 @@ public class Champion {
 
     public int getRiotPointPrice() {
         return riotPointPrice;
+    }
+
+    public String getImage() {
+        return image;
     }
 
     public void addSkin(Skin skin) {

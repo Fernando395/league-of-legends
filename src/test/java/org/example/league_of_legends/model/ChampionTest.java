@@ -15,7 +15,7 @@ public class ChampionTest {
         skill.add(skill1);
         Features features = new Features("lutador", "fácil", "exemplo", "corpo a corpo");
         Skin skin = new Skin("default", "18/01/2011", 0, true);
-        return new Champion("Renekton", "top/mid", skill, states, features, skin, "18/01/2011", 4800, 450);
+        return new Champion("URL", "Renekton", "top/mid", skill, states, features, skin, "18/01/2011", 4800, 450);
     }
 
     @Test
