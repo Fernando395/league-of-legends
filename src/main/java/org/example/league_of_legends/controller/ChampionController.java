@@ -65,13 +65,13 @@ public class ChampionController {
         return skin.updateFromDto(updateSkinDto);
     }
 
-    @PatchMapping
+    @PatchMapping("/champion/{id}")
     public Champion PartialUpdateChampion(@RequestBody PartialUpdateChampionDto dto,@PathVariable int id) {
         Champion champion = repository.findById(id);
         return champion.partialUpdateFromDto(dto);
     }
 
-    @PatchMapping
+    @PatchMapping("/champion/{id}/skin")
     public Skin PartialUpdateSkin(@RequestBody PartialUpdateSkinDto dto, @PathVariable int id) {
        Skin skin = skinRepository.findById(id);
         return skin.partialUpdateFromDto(dto);
