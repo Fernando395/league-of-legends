@@ -107,6 +107,7 @@ public class Champion {
     }
 
     public Champion updateFromDto(CreateChampionDto dto) {
+        this.image = dto.getImage();
         this.name = dto.getName();
         this.position = dto.getPosition();
         this.skinDefault = dto.getSkinDefault();
@@ -120,6 +121,9 @@ public class Champion {
     }
 
     public Champion partialUpdateFromDto(PartialUpdateChampionDto dto) {
+        if (dto.getImage().isPresent()) {
+            this.image = dto.getImage().get();
+        }
         if (dto.getName().isPresent()) {
             this.name = dto.getName().get();
         }

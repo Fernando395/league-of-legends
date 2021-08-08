@@ -6,12 +6,14 @@ import org.example.league_of_legends.dto.PartialUpdateSkinDto;
 public class Skin implements Cloneable {
     private static int counter = 1;
     private final int id;
+    private String image;
     private String name;
     private String releaseDate;
     private int riotPointPrice;
     private boolean obtainable;
 
-    public Skin(String name, String releaseDate, int riotPointPrice, boolean obtainable) {
+    public Skin(String image,String name, String releaseDate, int riotPointPrice, boolean obtainable) {
+        this.image = image;
         this.name = name;
         this.releaseDate = releaseDate;
         this.riotPointPrice = riotPointPrice;
@@ -26,11 +28,12 @@ public class Skin implements Cloneable {
             return super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
-            return new Skin(this.name, this.releaseDate, this.riotPointPrice, this.obtainable);
+            return new Skin(this.image, this.name, this.releaseDate, this.riotPointPrice, this.obtainable);
         }
     }
 
     public Skin updateFromDto(CreateSkinDto dto) {
+        this.image = dto.getImage();
         this.name = dto.getName();
         this.obtainable = dto.isObtainable();
         this.releaseDate = dto.getReleaseDateOf();
@@ -66,8 +69,14 @@ public class Skin implements Cloneable {
         this.obtainable = obtainable;
     }
 
+    public String getImage() {
+        return image;
+    }
 
     public Skin partialUpdateFromDto(PartialUpdateSkinDto dto) {
+        if (dto.getImage().isPresent()) {
+            this.image = dto.getImage().get();
+        }
         if (dto.getName().isPresent()) {
             this.name = dto.getName().get();
         }
