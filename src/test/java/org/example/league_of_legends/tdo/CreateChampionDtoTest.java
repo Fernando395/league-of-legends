@@ -90,7 +90,8 @@ public class CreateChampionDtoTest {
     }
 
     @Test
-    public void shouldReleaseDateOf() {
+    public void shouldGetReleaseDate() {
         assertEquals("18/01/2011", createAChampionTdoTest().getReleaseDate());
     }
+
 }

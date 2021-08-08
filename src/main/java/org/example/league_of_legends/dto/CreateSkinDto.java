@@ -1,7 +1,7 @@
 package org.example.league_of_legends.dto;
 
 public class CreateSkinDto {
-
+    private String image;
     private String name;
     private String releaseDateOf;
     private int riotPointPrice;
@@ -37,5 +37,13 @@ public class CreateSkinDto {
 
     public void setObtainable(boolean obtainable) {
         this.obtainable = obtainable;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

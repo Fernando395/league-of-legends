@@ -9,7 +9,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 import java.util.ArrayList;
 
 public class PartialUpdateChampionDto {
-
+    private final JsonNullable<String> image = JsonNullable.undefined();
     private final JsonNullable<String> name = JsonNullable.undefined();
     private final JsonNullable<String> position = JsonNullable.undefined();
     private final JsonNullable<States> states = JsonNullable.undefined();
@@ -19,6 +19,10 @@ public class PartialUpdateChampionDto {
     private final JsonNullable<String> releaseDate = JsonNullable.undefined();
     private final JsonNullable<Integer> riotPointPrice = JsonNullable.undefined();
     private final JsonNullable<Integer> influencePointPrice = JsonNullable.undefined();
+
+    public JsonNullable<String> getImage() {
+        return name;
+    }
 
     public JsonNullable<String> getName() {
         return name;
