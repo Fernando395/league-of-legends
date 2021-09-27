@@ -18,7 +18,7 @@ public class CreateChampionDtoTest {
         Skill skill1 = new PassiveSkill("exemplo de nome", 0, "exemplo de descrição");
         skill.add(skill1);
         Features features = new Features("lutador", "fácil", "exemplo", "corpo a corpo");
-        Skin skin = new Skin("default", "18/01/2011", 0, true);
+        Skin skin = new Skin( "URL","default", "18/01/2011", 0, true);
         championDto.setStates(states);
         championDto.setSkinDefault(skin);
         championDto.setSkills(skill);

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SkinTest {
-    Skin skin = new Skin("default", "18/01/2011", 0, true);
+    Skin skin = new Skin("URL", "default", "18/01/2011", 0, true);
 
     @Test
     public void shouldGetAttributes() {

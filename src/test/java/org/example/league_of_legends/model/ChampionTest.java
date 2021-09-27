@@ -14,7 +14,7 @@ public class ChampionTest {
         Skill skill1 = new PassiveSkill("exemplo de nome", 0, "exemplo de descrição");
         skill.add(skill1);
         Features features = new Features("lutador", "fácil", "exemplo", "corpo a corpo");
-        Skin skin = new Skin("default", "18/01/2011", 0, true);
+        Skin skin = new Skin( "URL","default", "18/01/2011", 0, true);
         return new Champion("URL", "Renekton", "top/mid", skill, states, features, skin, "18/01/2011", 4800, 450);
     }
 
@@ -69,7 +69,7 @@ public class ChampionTest {
     @Test
     public void shouldRemoveSkin() {
         Champion champion = createAChampionTest();
-        Skin skin = new Skin("default", "18/01/2011", 0, true);
+        Skin skin = new Skin( "URL","default", "18/01/2011", 0, true);
         champion.addSkin(skin);
         assertEquals(1, champion.getSkins().size());
         champion.removeSkin(skin);
@@ -79,7 +79,7 @@ public class ChampionTest {
     @Test
     public void shouldUpdateSkin() {
         Champion champion = createAChampionTest();
-        Skin fioraSkin = new Skin("Fiora", "18/01/2011", 0, true);
+        Skin fioraSkin = new Skin( "URL","Fiora", "18/01/2011", 0, true);
         champion.addSkin((Skin) fioraSkin.clone());
         fioraSkin.setRiotPointPrice(450);
         champion.updateSkin(fioraSkin);
@@ -89,7 +89,7 @@ public class ChampionTest {
     @Test
     public void shouldGetSkins() {
         Champion champion = createAChampionTest();
-        champion.addSkin(new Skin("default", "18/01/2011", 0, true));
+        champion.addSkin(new Skin("URL", "default", "18/01/2011", 0, true));
         assertEquals(1, champion.getSkins().size());
     }
 
