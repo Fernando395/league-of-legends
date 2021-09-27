@@ -20,6 +20,10 @@ public class PartialUpdateChampionDto {
     private final JsonNullable<Integer> riotPointPrice = JsonNullable.undefined();
     private final JsonNullable<Integer> influencePointPrice = JsonNullable.undefined();
 
+    @Deprecated
+    public PartialUpdateChampionDto(){
+    }
+
     public JsonNullable<String> getImage() {
         return name;
     }
