@@ -8,6 +8,7 @@ import org.example.league_of_legends.model.Champion;
 import org.example.league_of_legends.model.Skin;
 import org.example.league_of_legends.repository.ChampionRepository;
 import org.example.league_of_legends.repository.SkinRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,12 +17,12 @@ import java.util.ArrayList;
 @RestController
 public class ChampionController {
 
-    private final ChampionRepository repository;
+    @Autowired
+    private ChampionRepository repository = new ChampionRepository();
+
+    @Autowired
     SkinRepository skinRepository = new SkinRepository();
 
-    ChampionController() {
-        this.repository = new ChampionRepository();
-    }
 
     @GetMapping("/champion")
     public ArrayList<Champion> findChampions() {
@@ -66,14 +67,14 @@ public class ChampionController {
     }
 
     @PatchMapping("/champion/{id}")
-    public Champion PartialUpdateChampion(@RequestBody PartialUpdateChampionDto dto,@PathVariable int id) {
+    public Champion PartialUpdateChampion(@RequestBody PartialUpdateChampionDto dto, @PathVariable int id) {
         Champion champion = repository.findById(id);
         return champion.partialUpdateFromDto(dto);
     }
 
     @PatchMapping("/champion/{id}/skin")
     public Skin PartialUpdateSkin(@RequestBody PartialUpdateSkinDto dto, @PathVariable int id) {
-       Skin skin = skinRepository.findById(id);
+        Skin skin = skinRepository.findById(id);
         return skin.partialUpdateFromDto(dto);
     }
 }

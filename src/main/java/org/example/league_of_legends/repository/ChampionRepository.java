@@ -5,7 +5,7 @@ import org.example.league_of_legends.model.Champion;
 
 import java.util.ArrayList;
 
-public class ChampionRepository {
+public class ChampionRepository  {
     private ArrayList<Champion> champions = new ArrayList<>();
 
     public Champion save(Champion champion) {
