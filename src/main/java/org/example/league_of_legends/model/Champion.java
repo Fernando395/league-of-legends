@@ -3,12 +3,21 @@ package org.example.league_of_legends.model;
 import org.example.league_of_legends.dto.CreateChampionDto;
 import org.example.league_of_legends.dto.PartialUpdateChampionDto;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.ArrayList;
 
+@Entity
 public class Champion {
+
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private final int id;
     private String image;
     private static int counter = 1;
-    private final int id;
     private String name;
     private String position;
     private States states;

@@ -1,10 +1,10 @@
 package org.example.league_of_legends.model;
 
 public class Features {
-    private String function;
-    private String difficulty;
-    private String story;
-    private String attackType;
+    private final String function;
+    private final String difficulty;
+    private final String story;
+    private final String attackType;
 
     public Features(String function, String difficulty, String story, String attackType){
         this.function = function;
